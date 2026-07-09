@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  gap-trader:
+    build: .
+    container_name: gap-trader
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
