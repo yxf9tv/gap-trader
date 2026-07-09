@@ -109,7 +109,7 @@ services:
 ```
 
 ```bash
-docker compose up -d --build
+docker compose -f ~/apps/polymarket-suite/docker-compose.yml up -d --build gap-trader
 ```
 
 ### GitHub Actions (auto-deploy on push to main)
