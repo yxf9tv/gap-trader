@@ -165,6 +165,8 @@ def main():
                 print_alert(alert, ts)
 
         rem = quota.get("x-requests-remaining")
+        stamp = time.strftime("%H:%M:%S", time.localtime(ts))
+        print(f"[{stamp}] polled {sport} — quota: {rem or '?'}", flush=True)
         if rem is not None and int(rem) < 50:
             print(f"   (quota low: {rem} remaining)", file=sys.stderr)
 
