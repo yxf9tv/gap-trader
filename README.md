@@ -1,6 +1,8 @@
 # Gap Trader
 
-Detects price gaps between sharp sportsbook consensus and prediction market prices (Polymarket), then surfaces executable edge with Kelly sizing and velocity-gated stability checks.
+Detects price gaps between sharp sportsbook consensus and prediction market prices (Polymarket), surfaces executable edge with Kelly sizing and velocity-gated stability checks.
+
+[![Production Deployment Pipeline](https://github.com/yxf9tv/gap-trader/actions/workflows/deploy.yml/badge.svg)](https://github.com/yxf9tv/gap-trader/actions/workflows/deploy.yml)
 
 ## How It Works
 
@@ -77,6 +79,68 @@ python run_alerts.py --selftest
 ├── registry.json          # Outcome ID mappings
 └── test/                  # pytest suite
 ```
+
+## Deployment
+
+### Docker (production)
+
+```bash
+docker build -t gap-trader .
+docker run -d --name gap-trader \
+  --env-file .env \
+  -v $(pwd)/data:/app/data \
+  --restart unless-stopped \
+  gap-trader
+```
+
+### Docker Compose (recommended for VPS)
+
+```yaml
+# docker-compose.yml
+version: "3.9"
+services:
+  gap-trader:
+    build: .
+    container_name: gap-trader
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+```
+
+```bash
+docker compose up -d
+```
+
+### GitHub Actions (auto-deploy on push to main)
+
+1. Add these secrets in your repo (`Settings > Secrets and variables > Actions`):
+
+   | Secret | Value |
+   |---|---|
+   | `VPS_HOST` | Your VPS IP address |
+   | `VPS_USER` | SSH username |
+   | `SSH_PRIVATE_KEY` | SSH private key (PEM) |
+   | `ENV_FILE_CONTENT` | Full `.env` file as a single string |
+
+2. Push to `main` — the workflow SSHes in, pulls the repo, writes `.env`, and `docker compose up -d --build`s.
+
+### Environment Variables
+
+| Variable | Default | Required | Description |
+|---|---|---|---|
+| `PARLAY_API_KEY` | — | yes | ParlayAPI key |
+| `POLY_PK` | — | yes | Polymarket private key |
+| `POLY_FUNDER` | — | yes | Polymarket proxy/funder address |
+| `SPORT` | `baseball_mlb` | no | Sport to poll |
+| `POLL_INTERVAL` | `300` | no | Seconds between polls |
+| `MIN_EDGE` | `1.0` | no | Min gap edge in cents |
+| `GATE_FLOOR` | `0.51` | no | Sharp consensus gate |
+| `SLIPPAGE_BPS` | `5.0` | no | Slippage buffer |
+| `MIN_NET_EDGE` | `0.5` | no | Min edge after fees |
+| `VELOCITY_WINDOW` | `10` | no | Rolling fair-value window |
+| `VELOCITY_STD_MULT` | `2.0` | no | Std dev threshold |
+| `EXECUTION_ENABLED` | `1` | no | Allow order placement |
 
 ## Safety
 
