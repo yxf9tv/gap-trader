@@ -61,7 +61,7 @@ def main():
         sys.exit(1)
 
     sport = os.getenv("SPORT", "baseball_mlb")
-    interval = int(os.getenv("POLL_INTERVAL", "300"))
+    interval = int(os.getenv("POLL_INTERVAL", "60"))
     min_edge = float(os.getenv("MIN_EDGE", "1.0"))
     gate_floor = float(os.getenv("GATE_FLOOR", "0.51"))
     slippage_bps = float(os.getenv("SLIPPAGE_BPS", "5.0"))

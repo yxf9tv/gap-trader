@@ -383,7 +383,7 @@ def build_parser():
     p.add_argument("--sport", default="basketball_nba")
     p.add_argument("--regions", default="us")
     p.add_argument("--markets", default="h2h,spreads,totals")
-    p.add_argument("--interval", type=int, default=300,
+    p.add_argument("--interval", type=int, default=60,
                    help="seconds between polls")
     p.add_argument("--min-edge", type=float, default=1.0,
                    help="minimum edge in cents to fire alert")
