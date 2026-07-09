@@ -23,7 +23,11 @@ jobs:
 
           # Clone repository if first deployment, otherwise pull changes
           if [ -d "${{ github.event.repository.name }}" ]; then
-            cd ${{ github.event.repository.name }} && git pull origin main && cd ..
+            cd ${{ github.event.repository.name }} && git pull origin main && cd .. || {
+              echo "git pull failed — removing and re-cloning"
+              rm -rf "${{ github.event.repository.name }}"
+              git clone git@github.com:${{ github.repository }}.git
+            }
           else
             git clone git@github.com:${{ github.repository }}.git
           fi
