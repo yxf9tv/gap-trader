@@ -1,0 +1,32 @@
+name: Production Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Connect and Pull Latest Code to Host Machine
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd ~/apps/gap-trader
+
+          # Clone repository if first deployment, otherwise pull changes
+          if [ -d "${{ github.event.repository.name }}" ]; then
+            cd ${{ github.event.repository.name }} && git pull origin main && cd ..
+          else
+            git clone https://github.com/${{ github.repository }}.git
+          fi
+
+          # Inject production credential environments securely
+          echo "${{ secrets.ENV_FILE_CONTENT }}" > ./${{ github.event.repository.name }}/.env
+          chmod 600 ./${{ github.event.repository.name }}/.env
+
+          # Trigger container orchestration rebuild
+          docker compose up -d --build ${{ github.event.repository.name }}
