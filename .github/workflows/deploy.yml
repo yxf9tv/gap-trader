@@ -15,7 +15,11 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
+          mkdir -p ~/apps/gap-trader
           cd ~/apps/gap-trader
+
+          # Accept GitHub host key on first connection
+          mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 
           # Clone repository if first deployment, otherwise pull changes
           if [ -d "${{ github.event.repository.name }}" ]; then
@@ -25,8 +29,9 @@ jobs:
           fi
 
           # Inject production credential environments securely
-          echo "${{ secrets.ENV_FILE_CONTENT }}" > ./${{ github.event.repository.name }}/.env
-          chmod 600 ./${{ github.event.repository.name }}/.env
+          cd ${{ github.event.repository.name }}
+          echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
+          chmod 600 .env
 
           # Trigger container orchestration rebuild
           docker compose up -d --build ${{ github.event.repository.name }}
