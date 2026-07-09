@@ -108,7 +108,7 @@ def main():
 
     n_sports = len(sports)
     sport_index = 0
-    active_gaps: dict[tuple[str, str], dict] = {}
+    active_gaps: dict[tuple[str, str, str], dict] = {}
 
     print(f"Gap Trader — {n_sports} sports round-robin | every {interval}s "
           f"| ~{86400 // interval // n_sports * n_sports} calls/day  "
@@ -143,7 +143,7 @@ def main():
         ts = time.time()
         buckets = api.normalize(events, now=ts)
 
-        current_gaps: set[tuple[str, str]] = set()
+        current_gaps: set[tuple[str, str, str]] = set()
 
         for market_id, selections in buckets:
             if len(selections) < 2:
@@ -182,13 +182,13 @@ def main():
             log_alerts(alerts, log_alerts_path)
 
             for alert in alerts:
-                key = (alert.market, alert.live_side)
+                key = (sport, alert.market, alert.live_side)
                 edge = alert.edge_cents if alert.edge_cents is not None else alert.signal_edge_cents
 
                 if alert.traded in ("real", "gap") and edge is not None:
                     current_gaps.add(key)
                     if key not in active_gaps:
-                        active_gaps[key] = {"ts": ts, "max_edge": edge}
+                        active_gaps[key] = {"first_seen": ts, "max_edge": edge}
                         stamp = time.strftime("%H:%M:%S", time.localtime(ts))
                         event = alert.market.split("|")[0][:8] if "|" in alert.market else alert.market[:8]
                         print(f"[{stamp}]  GAP OPEN  ({event}) {alert.live_side}  "
@@ -200,14 +200,13 @@ def main():
                         prev = active_gaps[key]
                         if edge > prev["max_edge"]:
                             prev["max_edge"] = edge
-                        prev["ts"] = ts
 
-        # Detect closed gaps
+        # Detect closed gaps for the current sport only
         for key, info in list(active_gaps.items()):
-            if key not in current_gaps:
-                duration = (ts - info["ts"]) / 60.0
+            if key[0] == sport and key not in current_gaps:
+                duration = (ts - info["first_seen"]) / 60.0
                 stamp = time.strftime("%H:%M:%S", time.localtime(ts))
-                market, side = key
+                _, market, side = key
                 event = market.split("|")[0][:8] if "|" in market else market[:8]
                 print(f"[{stamp}]  GAP CLOSED ({event}) {side}  "
                       f"lasted {duration:.0f}m  max_edge={info['max_edge']:+.1f}¢",
