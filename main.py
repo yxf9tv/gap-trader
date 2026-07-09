@@ -15,7 +15,7 @@ import parlay_api_client as api
 import utils
 
 DEFAULT_SPORTS = "baseball_mlb,baseball_kbo,baseball_npb,soccer_fifa_world_cup,tennis_atp"
-GAPS_LOG = "gaps.jsonl"
+GAPS_LOG = "data/gaps.jsonl"
 
 
 def log_alerts(alerts: list[Alert], path: str) -> None:
@@ -80,9 +80,11 @@ def main():
     velocity_std_mult = float(os.getenv("VELOCITY_STD_MULT", "2.0"))
     regions = os.getenv("REGIONS", "us")
     markets = os.getenv("MARKETS", "h2h,spreads,totals")
-    log_alerts_path = os.getenv("LOG_ALERTS", "alerts.jsonl")
+    log_alerts_path = os.getenv("LOG_ALERTS", "data/alerts.jsonl")
     registry_path = os.getenv("REGISTRY_PATH", "registry.json")
     pmxt_api_key = os.getenv("PMXT_API_KEY", "")
+
+    os.makedirs("data", exist_ok=True)
 
     signal_config = SignalConfig(min_edge_cents=min_edge)
 
