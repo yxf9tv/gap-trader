@@ -28,10 +28,10 @@ jobs:
               echo "git pull failed — removing and re-cloning"
               cd ..
               rm -rf "$REPO"
-              git clone git@github.com:${{ github.repository }}.git
+              GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=accept-new" git clone --depth 1 git@github.com:${{ github.repository }}.git
             }
           else
-            git clone git@github.com:${{ github.repository }}.git
+            GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=accept-new" git clone --depth 1 git@github.com:${{ github.repository }}.git
           fi
 
           # Inject production credential environments securely
