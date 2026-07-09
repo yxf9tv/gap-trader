@@ -109,7 +109,7 @@ services:
 ```
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 ### GitHub Actions (auto-deploy on push to main)
