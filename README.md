@@ -132,8 +132,8 @@ docker compose -f ~/apps/polymarket-suite/docker-compose.yml up -d --build gap-t
 | `PARLAY_API_KEY` | — | yes | ParlayAPI key |
 | `POLY_PK` | — | yes | Polymarket private key |
 | `POLY_FUNDER` | — | yes | Polymarket proxy/funder address |
-| `SPORT` | `baseball_mlb` | no | Sport to poll |
-| `POLL_INTERVAL` | `300` | no | Seconds between polls |
+| `SPORTS` | `baseball_mlb,...` | no | Comma-separated sports (round-robin) |
+| `POLL_INTERVAL` | `90` | no | Seconds between polls |
 | `MIN_EDGE` | `1.0` | no | Min gap edge in cents |
 | `GATE_FLOOR` | `0.51` | no | Sharp consensus gate |
 | `SLIPPAGE_BPS` | `5.0` | no | Slippage buffer |

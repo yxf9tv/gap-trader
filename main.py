@@ -14,6 +14,9 @@ from matching import MarketMatcher
 import parlay_api_client as api
 import utils
 
+DEFAULT_SPORTS = "baseball_mlb,baseball_kbo,baseball_npb,soccer_fifa_world_cup,tennis_atp"
+GAPS_LOG = "gaps.jsonl"
+
 
 def log_alerts(alerts: list[Alert], path: str) -> None:
     if not path or not alerts:
@@ -43,15 +46,21 @@ def log_alerts(alerts: list[Alert], path: str) -> None:
             }) + "\n")
 
 
-def print_alert(a: Alert, now: float) -> None:
-    stamp = time.strftime("%H:%M:%S", time.localtime(now))
-    event = a.market.split("|")[0][:8] if "|" in a.market else a.market[:8]
-    edge = a.edge_cents if a.edge_cents is not None else a.signal_edge_cents
-    conv = f"  conv=${a.conviction_liquidity:.0f}" if a.conviction_liquidity > 0 else ""
-    label = f" [{a.gap_side_label}]" if a.gap_side_label else ""
-    print(f"[{stamp}] ({event}) {a.live_side}{label} @ {a.signal_book}  "
-          f"fair={a.fair_cents:.1f}¢  got={a.signal_price_cents:.1f}¢  "
-          f"edge={edge:+.1f}¢{conv}")
+def log_gap_event(event: str, market: str, side: str, edge: float | None,
+                   duration_min: float | None = None, max_edge: float | None = None) -> None:
+    rec = {
+        "ts": time.time(),
+        "event": event,
+        "market": market,
+        "side": side,
+        "edge_cents": edge,
+    }
+    if duration_min is not None:
+        rec["duration_min"] = round(duration_min, 1)
+    if max_edge is not None:
+        rec["max_edge_cents"] = round(max_edge, 2)
+    with open(GAPS_LOG, "a") as f:
+        f.write(json.dumps(rec) + "\n")
 
 
 def main():
@@ -60,8 +69,9 @@ def main():
         print("ERROR: PARLAY_API_KEY not set", file=sys.stderr)
         sys.exit(1)
 
-    sport = os.getenv("SPORT", "baseball_mlb")
-    interval = int(os.getenv("POLL_INTERVAL", "60"))
+    sports = os.getenv("SPORTS", DEFAULT_SPORTS).split(",")
+    sports = [s.strip() for s in sports if s.strip()]
+    interval = int(os.getenv("POLL_INTERVAL", "90"))
     min_edge = float(os.getenv("MIN_EDGE", "1.0"))
     gate_floor = float(os.getenv("GATE_FLOOR", "0.51"))
     slippage_bps = float(os.getenv("SLIPPAGE_BPS", "5.0"))
@@ -71,15 +81,9 @@ def main():
     regions = os.getenv("REGIONS", "us")
     markets = os.getenv("MARKETS", "h2h,spreads,totals")
     log_alerts_path = os.getenv("LOG_ALERTS", "alerts.jsonl")
-    log_lines_path = os.getenv("LOG_LINES", "lines.jsonl")
     registry_path = os.getenv("REGISTRY_PATH", "registry.json")
     pmxt_api_key = os.getenv("PMXT_API_KEY", "")
 
-    fair_config = FairValueConfig(
-        sport=sport, gate_floor_2way=gate_floor,
-        allow_single_sharp=False, devig_method="proportional",
-        odds_format="decimal",
-    )
     signal_config = SignalConfig(min_edge_cents=min_edge)
 
     engine = ExecutionEngine(ExecutionConfig(
@@ -102,30 +106,44 @@ def main():
         pmxt_api_key=pmxt_api_key if pmxt_api_key else None,
     )
 
-    seen: dict = {}
+    n_sports = len(sports)
+    sport_index = 0
+    active_gaps: dict[tuple[str, str], dict] = {}
 
-    print(f"Gap Trader — {sport} | every {interval}s | min_edge={min_edge}¢  "
-          f"gate_floor={gate_floor}  (Ctrl-C to stop)\n", flush=True)
+    print(f"Gap Trader — {n_sports} sports round-robin | every {interval}s "
+          f"| ~{86400 // interval // n_sports * n_sports} calls/day  "
+          f"(Ctrl-C to stop)\n", flush=True)
 
     while True:
+        sport = sports[sport_index % n_sports]
+        sport_index += 1
+
+        fair_config = FairValueConfig(
+            sport=sport, gate_floor_2way=gate_floor,
+            allow_single_sharp=False, devig_method="proportional",
+            odds_format="decimal",
+        )
+
         try:
             events, quota = api.fetch_odds(
                 api_key, sport, regions, markets, "decimal")
         except api.OddsAPIError as e:
             msg = str(e)
-            print(f"!! {msg}", file=sys.stderr)
+            print(f"!! {sport}: {msg}", file=sys.stderr)
             if "HTTP 429" in msg:
                 print("Quota exhausted. Stopping.", file=sys.stderr)
                 return
             time.sleep(interval)
             continue
         except Exception as e:
-            print(f"!! poll error: {e}", file=sys.stderr)
+            print(f"!! {sport}: {e}", file=sys.stderr)
             time.sleep(interval)
             continue
 
         ts = time.time()
         buckets = api.normalize(events, now=ts)
+
+        current_gaps: set[tuple[str, str]] = set()
 
         for market_id, selections in buckets:
             if len(selections) < 2:
@@ -164,11 +182,44 @@ def main():
             log_alerts(alerts, log_alerts_path)
 
             for alert in alerts:
-                print_alert(alert, ts)
+                key = (alert.market, alert.live_side)
+                edge = alert.edge_cents if alert.edge_cents is not None else alert.signal_edge_cents
+
+                if alert.traded in ("real", "gap") and edge is not None:
+                    current_gaps.add(key)
+                    if key not in active_gaps:
+                        active_gaps[key] = {"ts": ts, "max_edge": edge}
+                        stamp = time.strftime("%H:%M:%S", time.localtime(ts))
+                        event = alert.market.split("|")[0][:8] if "|" in alert.market else alert.market[:8]
+                        print(f"[{stamp}]  GAP OPEN  ({event}) {alert.live_side}  "
+                              f"{alert.signal_book} fair={alert.fair_cents:.1f}¢  "
+                              f"got={alert.signal_price_cents:.1f}¢  edge={edge:+.1f}¢",
+                              flush=True)
+                        log_gap_event("open", alert.market, alert.live_side, edge)
+                    else:
+                        prev = active_gaps[key]
+                        if edge > prev["max_edge"]:
+                            prev["max_edge"] = edge
+                        prev["ts"] = ts
+
+        # Detect closed gaps
+        for key, info in list(active_gaps.items()):
+            if key not in current_gaps:
+                duration = (ts - info["ts"]) / 60.0
+                stamp = time.strftime("%H:%M:%S", time.localtime(ts))
+                market, side = key
+                event = market.split("|")[0][:8] if "|" in market else market[:8]
+                print(f"[{stamp}]  GAP CLOSED ({event}) {side}  "
+                      f"lasted {duration:.0f}m  max_edge={info['max_edge']:+.1f}¢",
+                      flush=True)
+                log_gap_event("close", market, side, None, duration, info["max_edge"])
+                del active_gaps[key]
 
         rem = quota.get("x-requests-remaining")
+        seq = sport_index % n_sports
         stamp = time.strftime("%H:%M:%S", time.localtime(ts))
-        print(f"[{stamp}] polled {sport} — quota: {rem or '?'}", flush=True)
+        print(f"[{stamp}] [{seq}/{n_sports}] {sport} — quota: {rem or '?'}  "
+              f"gaps: {len(active_gaps)}", flush=True)
         if rem is not None and int(rem) < 50:
             print(f"   (quota low: {rem} remaining)", file=sys.stderr)
 
