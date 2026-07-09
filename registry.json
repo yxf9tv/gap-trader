@@ -1,0 +1,719 @@
+{
+  "version": 1,
+  "mappings": {
+    "evt_tur_usa|h2h|USA": {
+      "kalshi": {
+        "outcome_id": "KXWCGAME-26JUN25TURUSA-USA",
+        "opposite_outcome_id": "KXWCGAME-26JUN25TURUSA-USA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292140LADATH|h2h|Los Angeles Dodgers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292140LADATH-LAD",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292140LADATH-LAD-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292140LADATH|h2h|Oakland Athletics": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292140LADATH-ATH",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292140LADATH-ATH-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292005SDCHC|h2h|San Diego Padres": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292005SDCHC-SD",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292005SDCHC-SD-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292005SDCHC|h2h|Chicago Cubs": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292005SDCHC-CHC",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292005SDCHC-CHC-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292010MINHOU|h2h|Minnesota Twins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292010MINHOU-MIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292010MINHOU-MIN-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292010MINHOU|h2h|Houston Astros": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292010MINHOU-HOU",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292010MINHOU-HOU-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292040MIACOL|h2h|Miami Marlins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292040MIACOL-MIA",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292040MIACOL-MIA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292040MIACOL|h2h|Colorado Rockies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292040MIACOL-COL",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292040MIACOL-COL-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292140LAASEA|h2h|Los Angeles Angels": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292140LAASEA-LAA",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292140LAASEA-LAA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292140LAASEA|h2h|Seattle Mariners": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292140LAASEA-SEA",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292140LAASEA-SEA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292140SFAZ|h2h|San Francisco Giants": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292140SFAZ-SF",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292140SFAZ-SF-NO"
+      }
+    },
+    "KXMLBGAME-26JUN292140SFAZ|h2h|Arizona Diamondbacks": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN292140SFAZ-AZ",
+        "opposite_outcome_id": "KXMLBGAME-26JUN292140SFAZ-AZ-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302140LADATH|h2h|Los Angeles Dodgers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302140LADATH-LAD",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302140LADATH-LAD-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302140LADATH|h2h|Oakland Athletics": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302140LADATH-ATH",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302140LADATH-ATH-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301907NYMTOR|h2h|New York Mets": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301907NYMTOR-NYM",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301907NYMTOR-NYM-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301907NYMTOR|h2h|Toronto Blue Jays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301907NYMTOR-TOR",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301907NYMTOR-TOR-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301840PITPHI|h2h|Pittsburgh Pirates": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301840PITPHI-PIT",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301840PITPHI-PIT-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301840PITPHI|h2h|Philadelphia Phillies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301840PITPHI-PHI",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301840PITPHI-PHI-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301905DETNYY|h2h|Detroit Tigers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301905DETNYY-DET",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301905DETNYY-DET-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301905DETNYY|h2h|New York Yankees": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301905DETNYY-NYY",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301905DETNYY-NYY-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301840TEXCLE|h2h|Texas Rangers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301840TEXCLE-TEX",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301840TEXCLE-TEX-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301840TEXCLE|h2h|Cleveland Guardians": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301840TEXCLE-CLE",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301840TEXCLE-CLE-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302040MIACOL|h2h|Miami Marlins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302040MIACOL-MIA",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302040MIACOL-MIA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302040MIACOL|h2h|Colorado Rockies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302040MIACOL-COL",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302040MIACOL-COL-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302010MINHOU|h2h|Minnesota Twins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302010MINHOU-MIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302010MINHOU-MIN-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302010MINHOU|h2h|Houston Astros": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302010MINHOU-HOU",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302010MINHOU-HOU-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301910WSHBOS|h2h|Washington Nationals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301910WSHBOS-WSH",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301910WSHBOS-WSH-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301910WSHBOS|h2h|Boston Red Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301910WSHBOS-BOS",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301910WSHBOS-BOS-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301835CWSBAL|h2h|Chicago White Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301835CWSBAL-CWS",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301835CWSBAL-CWS-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301835CWSBAL|h2h|Baltimore Orioles": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301835CWSBAL-BAL",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301835CWSBAL-BAL-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302140SFAZ|h2h|San Francisco Giants": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302140SFAZ-SF",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302140SFAZ-SF-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302140SFAZ|h2h|Arizona Diamondbacks": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302140SFAZ-AZ",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302140SFAZ-AZ-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301915STLATL|h2h|St. Louis Cardinals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301915STLATL-STL",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301915STLATL-STL-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301915STLATL|h2h|Atlanta Braves": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301915STLATL-ATL",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301915STLATL-ATL-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302140LAASEA|h2h|Los Angeles Angels": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302140LAASEA-LAA",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302140LAASEA-LAA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302140LAASEA|h2h|Seattle Mariners": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302140LAASEA-SEA",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302140LAASEA-SEA-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301940CINMIL|h2h|Cincinnati Reds": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301940CINMIL-CIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301940CINMIL-CIN-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301940CINMIL|h2h|Milwaukee Brewers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301940CINMIL-MIL",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301940CINMIL-MIL-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301940TBKC|h2h|Tampa Bay Rays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301940TBKC-TB",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301940TBKC-TB-NO"
+      }
+    },
+    "KXMLBGAME-26JUN301940TBKC|h2h|Kansas City Royals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN301940TBKC-KC",
+        "opposite_outcome_id": "KXMLBGAME-26JUN301940TBKC-KC-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302005SDCHC|h2h|San Diego Padres": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302005SDCHC-SD",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302005SDCHC-SD-NO"
+      }
+    },
+    "KXMLBGAME-26JUN302005SDCHC|h2h|Chicago Cubs": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUN302005SDCHC-CHC",
+        "opposite_outcome_id": "KXMLBGAME-26JUN302005SDCHC-CHC-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012140LADATH|h2h|Los Angeles Dodgers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012140LADATH-LAD",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012140LADATH-LAD-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012140LADATH|h2h|Oakland Athletics": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012140LADATH-ATH",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012140LADATH-ATH-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011940TBKC|h2h|Tampa Bay Rays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011940TBKC-TB",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011940TBKC-TB-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011940TBKC|h2h|Kansas City Royals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011940TBKC-KC",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011940TBKC-KC-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011420SDCHC|h2h|San Diego Padres": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011420SDCHC-SD",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011420SDCHC-SD-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011420SDCHC|h2h|Chicago Cubs": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011420SDCHC-CHC",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011420SDCHC-CHC-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011335WSHBOS|h2h|Washington Nationals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011335WSHBOS-WSH",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011335WSHBOS-WSH-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011335WSHBOS|h2h|Boston Red Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011335WSHBOS-BOS",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011335WSHBOS-BOS-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011335DETNYY|h2h|Detroit Tigers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011335DETNYY-DET",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011335DETNYY-DET-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011335DETNYY|h2h|New York Yankees": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011335DETNYY-NYY",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011335DETNYY-NYY-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021235PITPHI|h2h|Pittsburgh Pirates": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021235PITPHI-PIT",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021235PITPHI-PIT-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021235PITPHI|h2h|Philadelphia Phillies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021235PITPHI-PHI",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021235PITPHI-PHI-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011507NYMTOR|h2h|New York Mets": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011507NYMTOR-NYM",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011507NYMTOR-NYM-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011507NYMTOR|h2h|Toronto Blue Jays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011507NYMTOR-TOR",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011507NYMTOR-TOR-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012140SFAZ|h2h|San Francisco Giants": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012140SFAZ-SF",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012140SFAZ-SF-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012140SFAZ|h2h|Arizona Diamondbacks": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012140SFAZ-AZ",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012140SFAZ-AZ-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011840PITPHI|h2h|Pittsburgh Pirates": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011840PITPHI-PIT",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011840PITPHI-PIT-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011840PITPHI|h2h|Philadelphia Phillies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011840PITPHI-PHI",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011840PITPHI-PHI-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021410CINMIL|h2h|Cincinnati Reds": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021410CINMIL-CIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021410CINMIL-CIN-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021410CINMIL|h2h|Milwaukee Brewers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021410CINMIL-MIL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021410CINMIL-MIL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011310TEXCLE|h2h|Texas Rangers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011310TEXCLE-TEX",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011310TEXCLE-TEX-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011310TEXCLE|h2h|Cleveland Guardians": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011310TEXCLE-CLE",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011310TEXCLE-CLE-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021915STLATL|h2h|St. Louis Cardinals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021915STLATL-STL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021915STLATL-STL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021915STLATL|h2h|Atlanta Braves": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021915STLATL-ATL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021915STLATL-ATL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011235CWSBAL|h2h|Chicago White Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011235CWSBAL-CWS",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011235CWSBAL-CWS-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011235CWSBAL|h2h|Baltimore Orioles": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011235CWSBAL-BAL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011235CWSBAL-BAL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011915STLATL|h2h|St. Louis Cardinals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011915STLATL-STL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011915STLATL-STL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL011915STLATL|h2h|Atlanta Braves": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL011915STLATL-ATL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL011915STLATL-ATL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012010CINMIL|h2h|Cincinnati Reds": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012010CINMIL-CIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012010CINMIL-CIN-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012010CINMIL|h2h|Milwaukee Brewers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012010CINMIL-MIL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012010CINMIL-MIL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012010MINHOU|h2h|Minnesota Twins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012010MINHOU-MIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012010MINHOU-MIN-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012010MINHOU|h2h|Houston Astros": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012010MINHOU-HOU",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012010MINHOU-HOU-NO"
+      }
+    },
+    "KXMLBGAME-26JUL022210SDLAD|h2h|San Diego Padres": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL022210SDLAD-SD",
+        "opposite_outcome_id": "KXMLBGAME-26JUL022210SDLAD-SD-NO"
+      }
+    },
+    "KXMLBGAME-26JUL022210SDLAD|h2h|Los Angeles Dodgers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL022210SDLAD-LAD",
+        "opposite_outcome_id": "KXMLBGAME-26JUL022210SDLAD-LAD-NO"
+      }
+    },
+    "KXMLBGAME-26JUL022005DETTEX|h2h|Detroit Tigers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL022005DETTEX-DET",
+        "opposite_outcome_id": "KXMLBGAME-26JUL022005DETTEX-DET-NO"
+      }
+    },
+    "KXMLBGAME-26JUL022005DETTEX|h2h|Texas Rangers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL022005DETTEX-TEX",
+        "opposite_outcome_id": "KXMLBGAME-26JUL022005DETTEX-TEX-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012040MIACOL|h2h|Miami Marlins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012040MIACOL-MIA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012040MIACOL-MIA-NO"
+      }
+    },
+    "KXMLBGAME-26JUL012040MIACOL|h2h|Colorado Rockies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL012040MIACOL-COL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL012040MIACOL-COL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021940TBKC|h2h|Tampa Bay Rays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021940TBKC-TB",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021940TBKC-TB-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021940TBKC|h2h|Kansas City Royals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021940TBKC-KC",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021940TBKC-KC-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021510MIACOL|h2h|Miami Marlins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021510MIACOL-MIA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021510MIACOL-MIA-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021510MIACOL|h2h|Colorado Rockies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021510MIACOL-COL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021510MIACOL-COL-NO"
+      }
+    },
+    "KXMLBGAME-26JUL022140LAASEA|h2h|Los Angeles Angels": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL022140LAASEA-LAA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL022140LAASEA-LAA-NO"
+      }
+    },
+    "KXMLBGAME-26JUL022140LAASEA|h2h|Seattle Mariners": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL022140LAASEA-SEA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL022140LAASEA-SEA-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021840CWSCLE|h2h|Chicago White Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021840CWSCLE-CWS",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021840CWSCLE-CWS-NO"
+      }
+    },
+    "KXMLBGAME-26JUL021840CWSCLE|h2h|Cleveland Guardians": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL021840CWSCLE-CLE",
+        "opposite_outcome_id": "KXMLBGAME-26JUL021840CWSCLE-CLE-NO"
+      }
+    },
+    "kalshi_mlb|Los Angeles Dodgers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042210SDLAD-LAD",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042210SDLAD-LAD-NO"
+      }
+    },
+    "kalshi_mlb|Oakland Athletics": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042140MIAATH-ATH",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042140MIAATH-ATH-NO"
+      }
+    },
+    "kalshi_mlb|San Diego Padres": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042210SDLAD-SD",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042210SDLAD-SD-NO"
+      }
+    },
+    "kalshi_mlb|Chicago Cubs": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042008STLCHC-CHC",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042008STLCHC-CHC-NO"
+      }
+    },
+    "kalshi_mlb|Minnesota Twins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041335MINNYY-MIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041335MINNYY-MIN-NO"
+      }
+    },
+    "kalshi_mlb|Houston Astros": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041910TBHOU-HOU",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041910TBHOU-HOU-NO"
+      }
+    },
+    "kalshi_mlb|Miami Marlins": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042140MIAATH-MIA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042140MIAATH-MIA-NO"
+      }
+    },
+    "kalshi_mlb|Colorado Rockies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042010SFCOL-COL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042010SFCOL-COL-NO"
+      }
+    },
+    "kalshi_mlb|Los Angeles Angels": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042138BOSLAA-LAA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042138BOSLAA-LAA-NO"
+      }
+    },
+    "kalshi_mlb|Seattle Mariners": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041610TORSEA-SEA",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041610TORSEA-SEA-NO"
+      }
+    },
+    "kalshi_mlb|San Francisco Giants": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042010SFCOL-SF",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042010SFCOL-SF-NO"
+      }
+    },
+    "kalshi_mlb|Arizona Diamondbacks": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042140MILAZ-AZ",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042140MILAZ-AZ-NO"
+      }
+    },
+    "kalshi_mlb|New York Mets": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042008NYMATL-NYM",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042008NYMATL-NYM-NO"
+      }
+    },
+    "kalshi_mlb|Toronto Blue Jays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041610TORSEA-TOR",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041610TORSEA-TOR-NO"
+      }
+    },
+    "kalshi_mlb|Pittsburgh Pirates": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041105PITWSH-PIT",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041105PITWSH-PIT-NO"
+      }
+    },
+    "kalshi_mlb|Philadelphia Phillies": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042010PHIKC-PHI",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042010PHIKC-PHI-NO"
+      }
+    },
+    "kalshi_mlb|Detroit Tigers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041605DETTEX-DET",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041605DETTEX-DET-NO"
+      }
+    },
+    "kalshi_mlb|New York Yankees": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041335MINNYY-NYY",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041335MINNYY-NYY-NO"
+      }
+    },
+    "kalshi_mlb|Texas Rangers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041605DETTEX-TEX",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041605DETTEX-TEX-NO"
+      }
+    },
+    "kalshi_mlb|Cleveland Guardians": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041910CWSCLE-CLE",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041910CWSCLE-CLE-NO"
+      }
+    },
+    "kalshi_mlb|Washington Nationals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041105PITWSH-WSH",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041105PITWSH-WSH-NO"
+      }
+    },
+    "kalshi_mlb|Boston Red Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042138BOSLAA-BOS",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042138BOSLAA-BOS-NO"
+      }
+    },
+    "kalshi_mlb|Chicago White Sox": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041910CWSCLE-CWS",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041910CWSCLE-CWS-NO"
+      }
+    },
+    "kalshi_mlb|Baltimore Orioles": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041910BALCIN-BAL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041910BALCIN-BAL-NO"
+      }
+    },
+    "kalshi_mlb|St. Louis Cardinals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042008STLCHC-STL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042008STLCHC-STL-NO"
+      }
+    },
+    "kalshi_mlb|Atlanta Braves": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042008NYMATL-ATL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042008NYMATL-ATL-NO"
+      }
+    },
+    "kalshi_mlb|Cincinnati Reds": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041910BALCIN-CIN",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041910BALCIN-CIN-NO"
+      }
+    },
+    "kalshi_mlb|Milwaukee Brewers": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042140MILAZ-MIL",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042140MILAZ-MIL-NO"
+      }
+    },
+    "kalshi_mlb|Tampa Bay Rays": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL041910TBHOU-TB",
+        "opposite_outcome_id": "KXMLBGAME-26JUL041910TBHOU-TB-NO"
+      }
+    },
+    "kalshi_mlb|Kansas City Royals": {
+      "kalshi": {
+        "outcome_id": "KXMLBGAME-26JUL042010PHIKC-KC",
+        "opposite_outcome_id": "KXMLBGAME-26JUL042010PHIKC-KC-NO"
+      }
+    }
+  }
+}

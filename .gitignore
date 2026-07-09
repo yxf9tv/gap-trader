@@ -1,0 +1,8 @@
+.env
+kalshi_rsa_key
+__pycache__/
+*.pyc
+.pytest_cache/
+*.jsonl
+*.log
+.DS_Store
