@@ -117,6 +117,10 @@ def main():
                 return
             time.sleep(interval)
             continue
+        except Exception as e:
+            print(f"!! poll error: {e}", file=sys.stderr)
+            time.sleep(interval)
+            continue
 
         ts = time.time()
         buckets = api.normalize(events, now=ts)
