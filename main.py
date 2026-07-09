@@ -94,6 +94,8 @@ def main():
         velocity_std_mult=velocity_std_mult,
     ))
     engine.connect()
+    connected_venues = list(engine.clients.keys())
+    print(f"  venues: {connected_venues}" if connected_venues else "  !! no venues connected")
 
     matcher = MarketMatcher(
         registry_path=registry_path,
