@@ -34,4 +34,4 @@ jobs:
           chmod 600 .env
 
           # Trigger container orchestration rebuild
-          docker compose up -d --build ${{ github.event.repository.name }}
+          docker compose -f ~/apps/gap-trader/${{ github.event.repository.name }}/docker-compose.yml up -d --build ${{ github.event.repository.name }}
