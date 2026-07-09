@@ -312,11 +312,16 @@ def make_venue(name: str, *, auto_start_server: bool = True):
             if _saved is not None:
                 os.environ["PMXT_API_KEY"] = _saved
     if name == "polymarket":
-        return pmxt.Polymarket(
-            private_key=_get_env("POLYMARKET_PRIVATE_KEY", "POLY_PK"),
-            proxy_address=_get_env("POLYMARKET_PROXY_ADDRESS", "POLY_FUNDER"),
-            signature_type="gnosis-safe",
-            auto_start_server=auto_start_server)
+        _saved = os.environ.pop("PMXT_API_KEY", None)
+        try:
+            return pmxt.Polymarket(
+                private_key=_get_env("POLYMARKET_PRIVATE_KEY", "POLY_PK"),
+                proxy_address=_get_env("POLYMARKET_PROXY_ADDRESS", "POLY_FUNDER"),
+                signature_type="gnosis-safe",
+                auto_start_server=auto_start_server)
+        finally:
+            if _saved is not None:
+                os.environ["PMXT_API_KEY"] = _saved
     if name == "polymarket_us":
         return pmxt.PolymarketUS(
             api_key=os.environ.get("POLYMARKET_US_API_KEY"),
